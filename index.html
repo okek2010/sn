@@ -46,7 +46,7 @@
             let ctrlIcon = document.getElementById("ctrlIcon");
 
             window.onload = function() {
-                document.getelementById("song");
+                document.getelementById("song").play();
                 progress.max = song.duration;
                 progress.value =song.currentTime;
             }
