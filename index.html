@@ -16,8 +16,8 @@
             <h1>Suara Nabawiy</h1>
             <p>107.7FM</p>
 
-            <audio id="song">
-                <source src="media/url.txt">
+            <audio autoplay id="song">
+                <source src="http://e14648.cloudrad.io:8872/;?_=0.5101971797030038" type="audio/mp3">
             </audio>
           
             <input type="range" value="0" id="progress">
@@ -45,17 +45,8 @@
             let song = document.getElementById("song");
             let ctrlIcon = document.getElementById("ctrlIcon");
 
-            song.onloadedmetadata = function(){
-                window.onload = function() {
-                var context = new AudioContext();
-                document.querySelector('button').addEventListener('click', function() {
-                context.resume().then(() => {
-                console.log('Playback resumed successfully');
-                  });
-                });
-                document.querySelector('button').addEventListener('click', function() {
-                var context = new AudioContext();
-                });
+            window.onload = function() {
+                document.getelementById("song");
                 progress.max = song.duration;
                 progress.value =song.currentTime;
             }
