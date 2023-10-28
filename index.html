@@ -8,11 +8,8 @@
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
         crossorigin="anonymous" referrerpolicy="no-referrer" />
         <script src="https://kit.fontawesome.com/9c08bd6b4f.js" crossorigin="anonymous"></script>
-
-
     </head>
     <body>
-
         <div class="container">
             <div class="music-player">
             <img src="media/Logo-Suara-Nabawiy.png" class="song-img">
@@ -44,15 +41,16 @@
             <a class="social-icon" href="https://www.facebook.com/suaranabawi/?locale=id_ID" target="_blank">
                 <i class="fa-brands fa-facebook"></i>
             </a>
-    
         </div> 
-
         <script>
             let progress = document.getElementById("progress");
             let song = document.getElementById("song");
             let ctrlIcon = document.getElementById("ctrlIcon");
 
             song.onloadedmetadata = function(){
+                window.onload = function() {
+                var context = new AudioContext();
+                document.querySelector('button').addEventListener('click', function() {
                 progress.max = song.duration;
                 progress.value =song.currentTime;
             }
@@ -68,7 +66,6 @@
                     ctrlIcon.classList.add("fa-pause");
                     ctrlIcon.classList.remove("fa-play");
                 }
-
             }
 
             if(song.play()){
@@ -83,9 +80,7 @@
                 ctrlIcon.classList.add("fa-pause");
                 ctrlIcon.classList.remove("fa-play");
             }
-
         </script>
-
         <div class="container2">
             <div class="web">
 
@@ -112,10 +107,8 @@
                 <a class="web" href="https://hskitab.com/" target="_blank">
                     <img src="media/kitab1.png">
                 </a>
-
             </div>
+        </div>
         </div> 
-
     </body>
-
 </html> 
